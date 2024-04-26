@@ -653,7 +653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'EndCredit
+  m_text: 'Credit
 
 '
   m_isRightToLeft: 0
