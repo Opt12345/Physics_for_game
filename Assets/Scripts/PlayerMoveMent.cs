@@ -1,108 +1,48 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerMoveMent : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float sprintSpeed;
-    [SerializeField] private float jupmForce;
-    [SerializeField] private float maxStamina;
-    
-    [SerializeField] private float regenStamina;
-    [SerializeField] private float staminaDrain;
-    
-    public Slider staminaSlider;
-
-    private float currentSpeed;
-    [SerializeField] private float currentStamina;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float jumpForce; 
     private Rigidbody2D rb;
-    private bool isGround = true;
-    private bool isJumping = false;
-    private bool isSprinting;
-    
+    private bool grounded;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentStamina = maxStamina;
-        currentSpeed = moveSpeed;
-        UpdateStaminaUI();
-
-    }  // Start is called before the first frame update
+    }  
     private void Update()
     {
-        float moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(moveHorizontal * walkSpeed, rb.velocity.y);
         
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        // Flip
+        if (moveHorizontal > 0.01f)
+            transform.localScale = Vector3.one;
+        else if (moveHorizontal < -0.001f)
+            transform.localScale = new Vector3(-1, 1, 1);
+        
+        //Jump
+        if (Input.GetKey(KeyCode.Space) && grounded)
         {
             Jump();
-            
         }
-        
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            Sprint(); 
-        }
-
-        if (Input.GetKey(KeyCode.Space) && isJumping)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jupmForce);
-            isJumping = false;
-        }
-
-        RegenerateStamina();
-        UpdateStaminaUI();
-    }
-    
-    private void FixedUpdate()
-    {
-        RegenerateStamina();
     }
 
     private void Jump()
     {
-        if (currentStamina > 0 && isGround)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jupmForce);
-            currentStamina -= 10f; // Adjust this value as needed
-            currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina) * Time.deltaTime;
-            UpdateStaminaUI();
-            isJumping = true;
-            isGround = false;
-        }
-    }
-
-    private void Sprint()
-    {
-        rb.velocity = new Vector2(sprintSpeed,rb.velocity.x);
-        currentStamina -= staminaDrain * Time.deltaTime;
-        currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
-        UpdateStaminaUI();
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        grounded = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isJumping = true;
-        }
-    }
-
-    private void UpdateStaminaUI()
-    {
-        staminaSlider.value = currentStamina / maxStamina;
-    }
-    private void RegenerateStamina()
-    {
-        if (!isSprinting && currentStamina < maxStamina && !Input.GetKey(KeyCode.LeftShift))
-        {
-            currentStamina += regenStamina * Time.deltaTime;
-            currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
-            UpdateStaminaUI();
-        }
+        if (collision.gameObject.tag == "Ground")
+            grounded = true;
     }
 }
