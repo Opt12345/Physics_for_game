@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7275058115259291220}
   - component: {fileID: 6388968443671664839}
   - component: {fileID: 6021297882432140886}
+  - component: {fileID: 7650439295273645818}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -258,3 +259,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   jumpForce: 25
+--- !u!114 &7650439295273645818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8270856998472002296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97dba8356f1a25743b3977410a09acb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCountText: {fileID: 0}
