@@ -21,17 +21,18 @@ public class Rock : MonoBehaviour
     void Update()
     {
         // สร้าง Raycast ในทิศทางลง (Vector3.down)
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance);
-
-        // วาดเส้น Raycast ใน Scene
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, raycastDistance, LayerMask.NameToLayer("Player"));
+        if (hit.collider)
+        {
+            Debug.Log(hit.collider.gameObject.name);
+        }
+        
         Debug.DrawRay(transform.position, Vector3.down * raycastDistance, rayColor);
-
-        // ตรวจสอบว่า Raycast ตรงกับ Player หรือไม่
+        
+        
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
             Debug.Log("Fall!!");
-            
-            // เปลี่ยนค่า Gravity ของ Rock เมื่อ Player ผ่าน Raycast
             rb.gravityScale = gravityOnPlayerPassed;
         }
     }
