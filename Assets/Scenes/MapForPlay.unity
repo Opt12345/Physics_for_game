@@ -29076,7 +29076,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 380819381641405208, guid: 1e95fecbe22aafd47a75a7cc6f1e8122, type: 3}
       propertyPath: maxRespawns
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 380819381641405208, guid: 1e95fecbe22aafd47a75a7cc6f1e8122, type: 3}
       propertyPath: respawnCountText

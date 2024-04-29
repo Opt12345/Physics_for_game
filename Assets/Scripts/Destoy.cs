@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,5 +9,13 @@ public class Destoy : MonoBehaviour
     void Start()
     {
         Destroy(gameObject,2);
+    }
+
+    private void Update()
+    {
+        if (gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

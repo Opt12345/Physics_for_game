@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7825455179484990081}
   - component: {fileID: 9056460045067061584}
+  - component: {fileID: 959590553761506035}
   m_Layer: 0
   m_Name: Redy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +79,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &959590553761506035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289720929320561794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d793536e8564164893bab7476ff1e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destructionEffect: {fileID: 0}
 --- !u!1 &8460548260203280604
 GameObject:
   m_ObjectHideFlags: 0
