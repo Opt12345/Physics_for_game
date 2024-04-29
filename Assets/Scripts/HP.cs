@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,9 +19,9 @@ public class HP : MonoBehaviour
         UpdateRespawnCountUI(); // อัปเดต UI เพื่อแสดงจำนวนครั้งที่เหลือ
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Enemy")) // ตรวจสอบว่าเกิดการชนกับศัตรูหรือไม่
+        if (other.collider.CompareTag("Enemy")) // ตรวจสอบว่าเกิดการชนกับศัตรูหรือไม่
         {
             respawnCount--; // ลบจำนวนครั้งที่เหลือลง 1
             UpdateRespawnCountUI(); // อัปเดต UI เพื่อแสดงจำนวนครั้งที่เหลือ
@@ -33,8 +35,12 @@ public class HP : MonoBehaviour
                     Respawn();
                 }
             }
+        }
+
+        if (other.collider.CompareTag("Goal"))
+        {
             
-            
+            SceneManager.LoadScene("Credit");
         }
     }
 

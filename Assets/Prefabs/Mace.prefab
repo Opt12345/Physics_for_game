@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3438897715895282931}
   - component: {fileID: 1451424812182450343}
   - component: {fileID: 64218118719462422}
-  m_Layer: 0
+  - component: {fileID: 5234269608057922282}
+  m_Layer: 6
   m_Name: Mace
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,13 +125,13 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 5236437964804369889}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -5.04}
+  m_ConnectedAnchor: {x: 0, y: -0.8500004}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -174,6 +175,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.52, y: 1.44}
   m_Direction: 0
+--- !u!247 &5234269608057922282
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273547274876406614}
+  m_Enabled: 1
+  m_Force: {x: -50, y: 0}
+  m_RelativeForce: {x: 50, y: 0}
+  m_Torque: 0
 --- !u!1 &1492851570359879084
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +198,7 @@ GameObject:
   - component: {fileID: 3025421760494684089}
   - component: {fileID: 5662900512745169869}
   - component: {fileID: 7763915370665025586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,13 +309,13 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 5387193004835421112}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -1.71}
+  m_ConnectedAnchor: {x: 0, y: -1.2500002}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -324,7 +336,7 @@ GameObject:
   - component: {fileID: 3811113010395848303}
   - component: {fileID: 7909085272828160206}
   - component: {fileID: 1949445358852891470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +352,7 @@ Transform:
   m_GameObject: {fileID: 2703827131677137116}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.79, z: 0}
+  m_LocalPosition: {x: 0, y: 1.85, z: 0}
   m_LocalScale: {x: 1, y: 0.35909998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -441,7 +453,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0.39}
+  m_ConnectedAnchor: {x: 10.18, y: 2.38}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &3008042934144882174
@@ -456,7 +468,7 @@ GameObject:
   - component: {fileID: 1692117290119350017}
   - component: {fileID: 9012358533818614770}
   - component: {fileID: 6351717456292401369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,13 +579,13 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 5662900512745169869}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -2.98}
+  m_ConnectedAnchor: {x: 0, y: -1.27}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -594,7 +606,7 @@ GameObject:
   - component: {fileID: 2310086804760031112}
   - component: {fileID: 5236437964804369889}
   - component: {fileID: 4247200122431241117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,13 +717,13 @@ HingeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 9012358533818614770}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -4.19}
+  m_ConnectedAnchor: {x: 0, y: -1.2099996}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -729,7 +741,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2145520593018685757}
-  m_Layer: 0
+  - component: {fileID: 6353544932021893191}
+  - component: {fileID: 3406163628207802043}
+  m_Layer: 6
   m_Name: Mace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8331226331013079111}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -757,6 +771,78 @@ Transform:
   - {fileID: 5352270239242914172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &6353544932021893191
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8331226331013079111}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &3406163628207802043
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8331226331013079111}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: -3.64}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.66, y: 1.6}
+  m_EdgeRadius: 0
 --- !u!1 &8582747008585410609
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +855,7 @@ GameObject:
   - component: {fileID: 8170479618873878481}
   - component: {fileID: 5387193004835421112}
   - component: {fileID: 4476247488358369250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,7 +972,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -2.3670287}
+  m_ConnectedAnchor: {x: 0, y: -2.5341134}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
