@@ -18,13 +18,13 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("MapForPlay");
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ShowCredits()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Credit");
     }
 
     public void Quit()
