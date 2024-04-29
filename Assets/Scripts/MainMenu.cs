@@ -19,7 +19,6 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("MapForPlay");
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ShowCredits()
