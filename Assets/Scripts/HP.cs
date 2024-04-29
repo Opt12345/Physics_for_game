@@ -24,14 +24,17 @@ public class HP : MonoBehaviour
             respawnCount--; // ลบจำนวนครั้งที่เหลือลง 1
             UpdateRespawnCountUI(); // อัปเดต UI เพื่อแสดงจำนวนครั้งที่เหลือ
 
-            if (respawnCount <= 0) // ถ้าไม่มีครั้งที่เหลือ
-            {
-                Debug.Log("Game Over");
-            }
+            if (respawnCount>=1)return;
             else
             {
-                Respawn(); // Respawn ตัวละคร
+                if (respawnCount <= 0)
+                {
+                    Debug.Log("Game Over");
+                    Respawn();
+                }
             }
+            
+            
         }
     }
 
